@@ -14,7 +14,6 @@ The Drug Inventory and Supply Chain Tracking System is a platform designed to ma
 
 🚀 **How to Run the App**
 
-### Steps to Run the WebApp
 ```bash
 Step 1️⃣: Run the Frontend
 cd frontend

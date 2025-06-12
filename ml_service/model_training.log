@@ -1,0 +1,304 @@
+2025-04-20 11:37:16,548 - INFO - Loading datasets...
+2025-04-20 11:37:16,595 - INFO - Hourly data shape: (50532, 13)
+2025-04-20 11:37:16,595 - INFO - Daily data shape: (2106, 13)
+2025-04-20 11:37:16,596 - INFO - Weekly data shape: (302, 9)
+2025-04-20 11:37:16,596 - INFO - Monthly data shape: (70, 9)
+2025-04-20 11:37:16,703 - ERROR - Error loading and preprocessing data: 'drug_type'
+Traceback (most recent call last):
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'drug_type'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\mayank raj\Desktop\drug inventory and supplyt chain tracking using ml\ml_service\train_combined_model.py", line 64, in load_and_preprocess_data
+    combined_df[drug_type.lower().replace('/', '')] = (combined_df['drug_type'] == drug_type).astype(float)
+                                                       ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'drug_type'
+2025-04-20 11:37:16,711 - ERROR - Error in main execution: 'drug_type'
+Traceback (most recent call last):
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'drug_type'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\mayank raj\Desktop\drug inventory and supplyt chain tracking using ml\ml_service\train_combined_model.py", line 152, in <module>
+    X, y = load_and_preprocess_data()
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\mayank raj\Desktop\drug inventory and supplyt chain tracking using ml\ml_service\train_combined_model.py", line 64, in load_and_preprocess_data
+    combined_df[drug_type.lower().replace('/', '')] = (combined_df['drug_type'] == drug_type).astype(float)
+                                                       ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'drug_type'
+2025-04-20 11:37:49,861 - INFO - Loading datasets...
+2025-04-20 11:37:49,908 - INFO - Hourly data shape: (50532, 13)
+2025-04-20 11:37:49,908 - INFO - Daily data shape: (2106, 13)
+2025-04-20 11:37:49,908 - INFO - Weekly data shape: (302, 9)
+2025-04-20 11:37:49,909 - INFO - Monthly data shape: (70, 9)
+2025-04-20 11:37:50,192 - ERROR - Error loading and preprocessing data: can only concatenate str (not "int") to str
+Traceback (most recent call last):
+  File "C:\Users\mayank raj\Desktop\drug inventory and supplyt chain tracking using ml\ml_service\train_combined_model.py", line 69, in load_and_preprocess_data
+    combined_df = combined_df.fillna(combined_df.mean())
+                                     ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\frame.py", line 11693, in mean
+    result = super().mean(axis, skipna, numeric_only, **kwargs)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\generic.py", line 12420, in mean
+    return self._stat_function(
+           ~~~~~~~~~~~~~~~~~~~^
+        "mean", nanops.nanmean, axis, skipna, numeric_only, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\generic.py", line 12377, in _stat_function
+    return self._reduce(
+           ~~~~~~~~~~~~^
+        func, name=name, axis=axis, skipna=skipna, numeric_only=numeric_only
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\frame.py", line 11562, in _reduce
+    res = df._mgr.reduce(blk_func)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\internals\managers.py", line 1500, in reduce
+    nbs = blk.reduce(func)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\internals\blocks.py", line 404, in reduce
+    result = func(self.values)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\frame.py", line 11481, in blk_func
+    return op(values, axis=axis, skipna=skipna, **kwds)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\nanops.py", line 147, in f
+    result = alt(values, axis=axis, skipna=skipna, **kwds)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\nanops.py", line 404, in new_func
+    result = func(values, axis=axis, skipna=skipna, mask=mask, **kwargs)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\nanops.py", line 719, in nanmean
+    the_sum = values.sum(axis, dtype=dtype_sum)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\numpy\_core\_methods.py", line 52, in _sum
+    return umr_sum(a, axis, dtype, out, keepdims, initial, where)
+TypeError: can only concatenate str (not "int") to str
+2025-04-20 11:37:50,199 - ERROR - Error in main execution: can only concatenate str (not "int") to str
+Traceback (most recent call last):
+  File "C:\Users\mayank raj\Desktop\drug inventory and supplyt chain tracking using ml\ml_service\train_combined_model.py", line 147, in <module>
+    X, y = load_and_preprocess_data()
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\mayank raj\Desktop\drug inventory and supplyt chain tracking using ml\ml_service\train_combined_model.py", line 69, in load_and_preprocess_data
+    combined_df = combined_df.fillna(combined_df.mean())
+                                     ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\frame.py", line 11693, in mean
+    result = super().mean(axis, skipna, numeric_only, **kwargs)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\generic.py", line 12420, in mean
+    return self._stat_function(
+           ~~~~~~~~~~~~~~~~~~~^
+        "mean", nanops.nanmean, axis, skipna, numeric_only, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\generic.py", line 12377, in _stat_function
+    return self._reduce(
+           ~~~~~~~~~~~~^
+        func, name=name, axis=axis, skipna=skipna, numeric_only=numeric_only
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\frame.py", line 11562, in _reduce
+    res = df._mgr.reduce(blk_func)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\internals\managers.py", line 1500, in reduce
+    nbs = blk.reduce(func)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\internals\blocks.py", line 404, in reduce
+    result = func(self.values)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\frame.py", line 11481, in blk_func
+    return op(values, axis=axis, skipna=skipna, **kwds)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\nanops.py", line 147, in f
+    result = alt(values, axis=axis, skipna=skipna, **kwds)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\nanops.py", line 404, in new_func
+    result = func(values, axis=axis, skipna=skipna, mask=mask, **kwargs)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\pandas\core\nanops.py", line 719, in nanmean
+    the_sum = values.sum(axis, dtype=dtype_sum)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\numpy\_core\_methods.py", line 52, in _sum
+    return umr_sum(a, axis, dtype, out, keepdims, initial, where)
+TypeError: can only concatenate str (not "int") to str
+2025-04-20 11:38:13,938 - INFO - Loading datasets...
+2025-04-20 11:38:13,988 - INFO - Hourly data shape: (50532, 13)
+2025-04-20 11:38:13,988 - INFO - Daily data shape: (2106, 13)
+2025-04-20 11:38:13,988 - INFO - Weekly data shape: (302, 9)
+2025-04-20 11:38:13,988 - INFO - Monthly data shape: (70, 9)
+2025-04-20 11:38:14,114 - INFO - Combined dataset shape: (53010, 21)
+2025-04-20 11:38:14,115 - INFO - Features: ['M01AB', 'M01AE', 'N02BA', 'N02BE', 'N05B', 'N05C', 'R03', 'R06', 'Year', 'Month', 'Hour', 'quarter', 'day_of_year', 'is_weekend']
+2025-04-20 11:38:14,116 - INFO - Starting model training...
+2025-04-20 11:38:14,116 - INFO - Fitting model...
+2025-04-20 11:38:17,676 - INFO - Saving model...
+2025-04-20 11:38:17,679 - INFO - Model saved successfully
+2025-04-20 11:38:17,679 - INFO - Evaluating model...
+2025-04-20 11:38:17,790 - INFO - Mean Squared Error: 0.0001
+2025-04-20 11:38:17,790 - INFO - Mean Absolute Error: 0.0014
+2025-04-20 11:38:17,790 - INFO - R2 Score: 1.0000
+2025-04-20 11:38:17,790 - INFO - Training completed successfully
+2025-04-20 12:00:27,828 - INFO - Loading datasets...
+2025-04-20 12:00:27,884 - INFO - Hourly data shape: (50532, 13)
+2025-04-20 12:00:27,884 - INFO - Daily data shape: (2106, 13)
+2025-04-20 12:00:27,885 - INFO - Weekly data shape: (302, 9)
+2025-04-20 12:00:27,885 - INFO - Monthly data shape: (70, 9)
+2025-04-20 12:00:28,007 - INFO - Combined dataset shape: (53010, 21)
+2025-04-20 12:00:28,007 - INFO - Features: ['Year', 'Month', 'Hour', 'quarter', 'day_of_year', 'is_weekend']
+2025-04-20 12:00:28,008 - INFO - Target shape: (53010, 8)
+2025-04-20 12:00:28,009 - INFO - Starting model training...
+2025-04-20 12:00:28,010 - INFO - Fitting model...
+2025-04-20 12:00:45,388 - INFO - Saving model...
+2025-04-20 12:00:45,406 - INFO - Model saved successfully
+2025-04-20 12:00:45,406 - INFO - Evaluating model...
+2025-04-20 12:00:45,838 - ERROR - Error evaluating model: y_true and y_pred have different number of output (1!=8)
+Traceback (most recent call last):
+  File "C:\Users\mayank raj\Desktop\drug inventory and supplyt chain tracking using ml\ml_service\train_combined_model.py", line 148, in evaluate_model
+    r2 = model.score(X, y.iloc[:, i])
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\sklearn\pipeline.py", line 1199, in score
+    return self.steps[-1][1].score(Xt, y, **score_params)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\sklearn\base.py", line 663, in score
+    return r2_score(y, y_pred, sample_weight=sample_weight)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\sklearn\metrics\_regression.py", line 1257, in r2_score
+    _check_reg_targets_with_floating_dtype(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        y_true, y_pred, sample_weight, multioutput, xp=xp
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\sklearn\metrics\_regression.py", line 198, in _check_reg_targets_with_floating_dtype
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+                                          ~~~~~~~~~~~~~~~~~~^
+        y_true, y_pred, multioutput, dtype=dtype_name, xp=xp
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\sklearn\metrics\_regression.py", line 115, in _check_reg_targets
+    raise ValueError(
+    ...<3 lines>...
+    )
+ValueError: y_true and y_pred have different number of output (1!=8)
+2025-04-20 12:00:45,842 - ERROR - Error in main execution: y_true and y_pred have different number of output (1!=8)
+Traceback (most recent call last):
+  File "C:\Users\mayank raj\Desktop\drug inventory and supplyt chain tracking using ml\ml_service\train_combined_model.py", line 168, in <module>
+    evaluate_model(model, X, y)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\mayank raj\Desktop\drug inventory and supplyt chain tracking using ml\ml_service\train_combined_model.py", line 148, in evaluate_model
+    r2 = model.score(X, y.iloc[:, i])
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\sklearn\pipeline.py", line 1199, in score
+    return self.steps[-1][1].score(Xt, y, **score_params)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\sklearn\base.py", line 663, in score
+    return r2_score(y, y_pred, sample_weight=sample_weight)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\sklearn\metrics\_regression.py", line 1257, in r2_score
+    _check_reg_targets_with_floating_dtype(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        y_true, y_pred, sample_weight, multioutput, xp=xp
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\sklearn\metrics\_regression.py", line 198, in _check_reg_targets_with_floating_dtype
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+                                          ~~~~~~~~~~~~~~~~~~^
+        y_true, y_pred, multioutput, dtype=dtype_name, xp=xp
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\sklearn\metrics\_regression.py", line 115, in _check_reg_targets
+    raise ValueError(
+    ...<3 lines>...
+    )
+ValueError: y_true and y_pred have different number of output (1!=8)
+2025-04-20 12:00:59,189 - INFO - Loading datasets...
+2025-04-20 12:00:59,243 - INFO - Hourly data shape: (50532, 13)
+2025-04-20 12:00:59,243 - INFO - Daily data shape: (2106, 13)
+2025-04-20 12:00:59,243 - INFO - Weekly data shape: (302, 9)
+2025-04-20 12:00:59,244 - INFO - Monthly data shape: (70, 9)
+2025-04-20 12:00:59,368 - INFO - Combined dataset shape: (53010, 21)
+2025-04-20 12:00:59,369 - INFO - Features: ['Year', 'Month', 'Hour', 'quarter', 'day_of_year', 'is_weekend']
+2025-04-20 12:00:59,369 - INFO - Target shape: (53010, 8)
+2025-04-20 12:00:59,371 - INFO - Starting model training...
+2025-04-20 12:00:59,371 - INFO - Fitting model...
+2025-04-20 12:01:19,997 - INFO - Saving model...
+2025-04-20 12:01:20,032 - INFO - Model saved successfully
+2025-04-20 12:01:20,033 - INFO - Evaluating model...
+2025-04-20 12:01:20,673 - ERROR - Error evaluating model: y_true and y_pred have different number of output (1!=8)
+Traceback (most recent call last):
+  File "C:\Users\mayank raj\Desktop\drug inventory and supplyt chain tracking using ml\ml_service\train_combined_model.py", line 148, in evaluate_model
+    r2 = model.score(X, y.iloc[:, i])
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\sklearn\pipeline.py", line 1199, in score
+    return self.steps[-1][1].score(Xt, y, **score_params)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\sklearn\base.py", line 663, in score
+    return r2_score(y, y_pred, sample_weight=sample_weight)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\sklearn\metrics\_regression.py", line 1257, in r2_score
+    _check_reg_targets_with_floating_dtype(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        y_true, y_pred, sample_weight, multioutput, xp=xp
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\sklearn\metrics\_regression.py", line 198, in _check_reg_targets_with_floating_dtype
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+                                          ~~~~~~~~~~~~~~~~~~^
+        y_true, y_pred, multioutput, dtype=dtype_name, xp=xp
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\sklearn\metrics\_regression.py", line 115, in _check_reg_targets
+    raise ValueError(
+    ...<3 lines>...
+    )
+ValueError: y_true and y_pred have different number of output (1!=8)
+2025-04-20 12:01:20,680 - ERROR - Error in main execution: y_true and y_pred have different number of output (1!=8)
+Traceback (most recent call last):
+  File "C:\Users\mayank raj\Desktop\drug inventory and supplyt chain tracking using ml\ml_service\train_combined_model.py", line 168, in <module>
+    evaluate_model(model, X, y)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\mayank raj\Desktop\drug inventory and supplyt chain tracking using ml\ml_service\train_combined_model.py", line 148, in evaluate_model
+    r2 = model.score(X, y.iloc[:, i])
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\sklearn\pipeline.py", line 1199, in score
+    return self.steps[-1][1].score(Xt, y, **score_params)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\sklearn\base.py", line 663, in score
+    return r2_score(y, y_pred, sample_weight=sample_weight)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\sklearn\metrics\_regression.py", line 1257, in r2_score
+    _check_reg_targets_with_floating_dtype(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        y_true, y_pred, sample_weight, multioutput, xp=xp
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\sklearn\metrics\_regression.py", line 198, in _check_reg_targets_with_floating_dtype
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+                                          ~~~~~~~~~~~~~~~~~~^
+        y_true, y_pred, multioutput, dtype=dtype_name, xp=xp
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\mayank raj\AppData\Roaming\Python\Python313\site-packages\sklearn\metrics\_regression.py", line 115, in _check_reg_targets
+    raise ValueError(
+    ...<3 lines>...
+    )
+ValueError: y_true and y_pred have different number of output (1!=8)

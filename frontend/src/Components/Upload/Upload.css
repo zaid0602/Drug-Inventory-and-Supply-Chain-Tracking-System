@@ -1,0 +1,186 @@
+.upload-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 80px;
+    background-color: #ffffff;
+    min-height: calc(100vh - 80px);
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.upload-container h1 {
+    color: #1a1a1a;
+    margin: 0 0 2.5rem;
+    font-size: 2.25rem;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 0.5rem;
+    text-align: center;
+}
+
+.upload-container h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, #3b82f6, #60a5fa);
+    border-radius: 2px;
+}
+
+.upload-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #f8fafc;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #1a1a1a;
+    font-size: 0.875rem;
+    letter-spacing: 0.025em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.875rem 1.25rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background: #ffffff;
+    color: #1a1a1a;
+    width: 100%;
+}
+
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a1a1a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    padding-right: 2.5rem;
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    outline: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+.form-group input[type="date"] {
+    font-family: inherit;
+}
+
+.form-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+button[type="submit"] {
+    background: linear-gradient(to right, #3b82f6, #60a5fa);
+    color: #ffffff;
+    padding: 0.875rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 200px;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(to right, #2563eb, #3b82f6);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);
+}
+
+button[type="submit"]:disabled {
+    background: #e2e8f0;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.error-message {
+    text-align: center;
+    padding: 1rem 2rem;
+    color: #dc2626;
+    background: #fee2e2;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+    .upload-container {
+        margin: 1rem;
+        margin-top: 80px;
+        padding: 1.5rem;
+    }
+
+    .upload-form {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .upload-container {
+        margin: 0.5rem;
+        margin-top: 60px;
+        padding: 1rem;
+    }
+
+    .upload-container h1 {
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
+    }
+
+    .upload-form {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+    }
+} 
